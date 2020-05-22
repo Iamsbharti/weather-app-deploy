@@ -1,10 +1,10 @@
 import React from "react";
-
+import Location from "./Components/Location";
 function App() {
   return (
     <div className="app">
       <main>
-        <form className="search-box">
+        <div className="search-box">
           <input
             type="text"
             placeholder="search..."
@@ -12,7 +12,8 @@ function App() {
             className="search-bar"
             onChange={(e) => console.log(e.target.value)}
           />
-        </form>
+        </div>
+        <Location />
       </main>
     </div>
   );
