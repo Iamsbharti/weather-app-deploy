@@ -1,5 +1,6 @@
 import React from "react";
 import Location from "./Components/Location";
+import Weather from "./Components/Weather";
 function App() {
   return (
     <div className="app">
@@ -14,6 +15,7 @@ function App() {
           />
         </div>
         <Location />
+        <Weather />
       </main>
     </div>
   );

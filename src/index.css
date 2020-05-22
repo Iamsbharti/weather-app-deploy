@@ -8,7 +8,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .app {
-  background-image: url("./assets/fall-warm.jpg");
+  background-image: url("./assets/cold.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 0.4 ease-out;
@@ -45,7 +45,7 @@ app.cold {
   border-radius: 16px 0px 16px 0px;
   box-shadow: 0px 5px, rgba(0, 0, 0, 0.8);
 
-  color: #121312;
+  color: #060707;
   transition: 0.4s ease;
   font-size: 20px;
 }
