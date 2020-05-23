@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 export default function SearchBox() {
-  //05208a7ae8a057ad963e621015916646
+  const [query, setQuery] = useState("");
+
   return (
     <div className="search-box">
       <input
@@ -8,7 +9,8 @@ export default function SearchBox() {
         placeholder="search..."
         name="search"
         className="search-bar"
-        onChange={(e) => console.log(e.target.value)}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
       />
     </div>
   );
