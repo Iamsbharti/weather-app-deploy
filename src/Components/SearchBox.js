@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { WeatherContextConsumer } from "./weatherContext";
 export default function SearchBox() {
-  const [query, setQuery] = useState("");
+  //const [query, setQuery] = useState("");
   return (
     <WeatherContextConsumer>
-      {({ search }) => (
+      {({ search, query, updateQuery }) => (
         <div className="search-box">
           <input
             type="text"
@@ -12,7 +12,7 @@ export default function SearchBox() {
             name="search"
             className="search-bar"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => updateQuery(e.target.value)}
             onKeyPress={(e) => search(query)}
           />
         </div>
