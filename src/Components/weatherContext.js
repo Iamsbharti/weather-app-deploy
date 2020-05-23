@@ -17,7 +17,7 @@ function WeatherContextProvider(props) {
       .then((data) => setWeather(data));
   };
 
-  console.log(weather.message);
+  //console.log(weather.message);
 
   return (
     <Provider
