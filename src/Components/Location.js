@@ -1,4 +1,5 @@
 import React from "react";
+import { WeatherContextConsumer } from "./weatherContext";
 export default function Location() {
   const dateBuilder = (d1) => {
     const months = [
@@ -33,9 +34,13 @@ export default function Location() {
     return `${day} ${date} ${month} ${fullYear}`;
   };
   return (
-    <div className="location-box">
-      <div className="location">Himalayas</div>
-      <div className="date">{dateBuilder(new Date())}</div>
-    </div>
+    <WeatherContextConsumer>
+      {({ weather }) => (
+        <div className="location-box">
+          <div className="location">{weather.name}</div>
+          <div className="date">{dateBuilder(new Date())}</div>
+        </div>
+      )}
+    </WeatherContextConsumer>
   );
 }
