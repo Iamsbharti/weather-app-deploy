@@ -3,23 +3,27 @@ const { Provider, Consumer } = React.createContext();
 
 class WeatherContextProvider extends Component {
   state = {
-    query: "",
     weather: {},
   };
-  setQuery = (newQuery) => {
-    this.setState({ query: newQuery });
-  };
-  search = (e) => {
+
+  //this.setState({ query: "", weather: data })
+  search = (query) => {
     let url = process.env.REACT_APP_WEATHER_API_URL;
     let key = process.env.REACT_APP_WEATHER_API_KEY;
-    fetch(`${url}/weather?q=${this.query}&appid=${key}`)
+    console.log(`${url}weather?q=${query}&appid=${key}`);
+    fetch(`${url}weather?q=${query}&appid=${key}`)
       .then((response) => response.json())
-      .then((data) => this.setState({ query: "", weather: data }));
+      .then((data) => this.setState({ weather: data }));
   };
 
   render() {
     return (
-      <Provider value={{ setQuery: this.setQuery, search: this.search }}>
+      <Provider
+        value={{
+          search: this.search,
+          weather: this.weather,
+        }}
+      >
         {this.props.children}
       </Provider>
     );
