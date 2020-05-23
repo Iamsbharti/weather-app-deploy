@@ -45,7 +45,9 @@ export default function Location() {
               <div className="date">{dateBuilder(new Date())}</div>
             </div>
             <div className="weather-box">
-              <div className="temp">{`${weather.main.temp} F`}</div>
+              <div className="temp">
+                {Math.round(weather.main.temp - 273.15)}&deg;c
+              </div>
               <div className="weather">{weather.weather[0].main}</div>
             </div>
           </>

@@ -12,7 +12,7 @@ function WeatherContextProvider(props) {
       .then((response) => response.json())
       .then((data) => setWeather(data));
   };
-  console.log(typeof weather);
+  console.log(weather);
   return (
     <Provider
       value={{
