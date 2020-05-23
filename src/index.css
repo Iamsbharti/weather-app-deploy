@@ -25,7 +25,7 @@ main {
 .app.warm {
   background-image: url("./assets/warm.jpg");
 }
-app.cold {
+.app.cold {
   background-image: url("./assets/cold.jpg");
 }
 .search-box {
@@ -58,6 +58,7 @@ app.cold {
   color: #fff;
   font-weight: 500;
   text-shadow: rgba(0, 0, 0, 0.75);
+  font-size: 40px;
 }
 .location-box .date {
   text-align: center;

@@ -7,12 +7,12 @@ function WeatherContextProvider(props) {
   const search = (query) => {
     let url = process.env.REACT_APP_WEATHER_API_URL;
     let key = process.env.REACT_APP_WEATHER_API_KEY;
-    //console.log(`${url}weather?q=${query}&appid=${key}`);
+
     fetch(`${url}weather?q=${query}&appid=${key}`)
       .then((response) => response.json())
       .then((data) => setWeather(data));
   };
-  console.log(weather);
+  console.log(typeof weather);
   return (
     <Provider
       value={{

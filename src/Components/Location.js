@@ -35,12 +35,24 @@ export default function Location() {
   };
   return (
     <WeatherContextConsumer>
-      {({ weather }) => (
-        <div className="location-box">
-          <div className="location">{weather.name}</div>
-          <div className="date">{dateBuilder(new Date())}</div>
-        </div>
-      )}
+      {({ weather }) =>
+        typeof weather.main != "undefined" ? (
+          <>
+            <div className="location-box">
+              <div className="location">
+                {weather.name},{weather.sys.country}
+              </div>
+              <div className="date">{dateBuilder(new Date())}</div>
+            </div>
+            <div className="weather-box">
+              <div className="temp">{`${weather.main.temp} F`}</div>
+              <div className="weather">{weather.weather[0].main}</div>
+            </div>
+          </>
+        ) : (
+          ""
+        )
+      }
     </WeatherContextConsumer>
   );
 }
