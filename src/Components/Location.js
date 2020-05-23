@@ -56,7 +56,14 @@ export default function Location() {
             ""
           )
         ) : (
-          <div className="weather-box temp">City not found</div>
+          <div className="weather-box">
+            <div
+              className="temp"
+              style={{ fontSize: "19px", textShadow: "none" }}
+            >
+              City Not Found
+            </div>
+          </div>
         )
       }
     </WeatherContextConsumer>
