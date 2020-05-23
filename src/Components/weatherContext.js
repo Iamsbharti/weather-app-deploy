@@ -4,7 +4,6 @@ const { Provider, Consumer } = React.createContext();
 function WeatherContextProvider(props) {
   const [weather, setWeather] = useState({});
 
-  //this.setState({ query: "", weather: data })
   const search = (query) => {
     let url = process.env.REACT_APP_WEATHER_API_URL;
     let key = process.env.REACT_APP_WEATHER_API_KEY;
@@ -13,7 +12,7 @@ function WeatherContextProvider(props) {
       .then((response) => response.json())
       .then((data) => setWeather(data));
   };
-
+  console.log(weather);
   return (
     <Provider
       value={{

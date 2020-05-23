@@ -1,10 +1,16 @@
 import React from "react";
-
+import { WeatherContextConsumer } from "./weatherContext";
 export default function Weather() {
   return (
-    <div className="weather-box">
-      <div className="temp">9&#730;C</div>
-      <div className="weather">HailStorm</div>
-    </div>
+    <WeatherContextConsumer>
+      {({ weather }) =>
+        weather.weather && (
+          <div className="weather-box">
+            <div className="temp">{`${weather.main.temp} F`}</div>
+            <div className="weather">{weather.weather[0].main}</div>
+          </div>
+        )
+      }
+    </WeatherContextConsumer>
   );
 }
